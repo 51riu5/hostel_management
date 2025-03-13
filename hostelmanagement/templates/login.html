@@ -1,0 +1,14 @@
+<title>Login to Hostello</title>
+{% load static %}
+<h1>Login to access Hostello</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit">Login</button>
+</form>
+
+<a href="{% url 'signup' %}">Don't have an account? Register here</a>

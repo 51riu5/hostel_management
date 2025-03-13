@@ -1,0 +1,22 @@
+<title>Hostello</title>
+{% load static %}
+
+<h1>Create user</h1>
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+   <p> <label>Username: </label> <input type="text" name="username" required><br></p>
+   <p> <label>Email: </label> <input type="email" name="email" required><br></p>
+   <p> <label>Password: </label> <input type="password" name="password" required><br></p>
+    <button type="submit">Signup</button>
+</form>
+<p>
+    {%if user%}
+    New user created with username: {{user.username}}
+    {%endif%}
+</p>
+<p
+    style="background_color:rgb(244, 23, 23);">
+    {%if error_message%}
+    {{error_message}}
+    {%endif%}
+</p>
